@@ -1,9 +1,59 @@
 {% extends 'base.html' %}
+{% load static %}
 {% block content %}
 	
-<div class="container" >
-
-
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="edit.css">
+    <!-- Other head content goes here -->
+</head>
+<body>
+    <br>
+    <div class=container>
+    <div class="container-fluid bg-dark text-white py-5 ">
+        <h1 class="text-center mb-5 ">Edit Profile</h1>
+        <div class=" row justify-content-center " >
+            <div class="col-md-8 ">
+                <div class="card bg-charcoal-black text-white p-4 ">
+                    <form method="post" >
+                        <div class="mb-4">
+                            <label for="name" class="form-label"> Name         :</label>
+                            <input type="text" class="form-control form-control-lg" id="name" name="name" value="John Doe">
+                        </div>
+                        <br><br>
+                        <div class="mb-4">
+                            <label for="role" class="form-label"> Role          :</label>
+                            <input type="text" class="form-control form-control-lg" id="role" name="role" value="2nd Year">
+                        </div>
+                        <br><br>
+                        <div class="mb-4">
+                            <label for="branch" class="form-label"> Branch:</label>
+                            <input type="text" class="form-control form-control-lg" id="branch" name="branch" value="Engineering">
+                        </div>
+                        <br><br>
+                        <div class="mb-4">
+                            <label for="department" class="form-label"> Department: </label>
+                            <input type="text" class="form-control form-control-lg" id="department" name="department" value="EEE">
+                        </div>
+                        <br><br>
+                        <div class="mb-4">
+                            <label for="passingYear" class="form-label"> Year of Passing: </label>
+                            <input type="text" class="form-control form-control-lg" id="passingYear" name="passingYear" value="2026">
+                        </div>
+                        <br><br>
+                        <div class="text-center mt-4">
+                            <button type="submit" class="btn btn-primary btn-lg">Save Changes</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
+    
+</body>
+</html>
+
 
 {% endblock %}
