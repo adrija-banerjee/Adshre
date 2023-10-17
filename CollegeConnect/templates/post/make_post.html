@@ -1,0 +1,80 @@
+{% load static %}
+
+{% block metatags %}
+<title>Profile : College Connect</title>
+
+{% endblock %}
+
+{% block content %}
+
+<html>
+
+<body>
+    <div class="detail-container">
+        <h2 id="detailUserTitle">User1</h2>
+        <p>Title 1</p>
+        <img class="detailUserImage" height="300px" width="600px" src="gold.jpg" alt="User Image">
+        <p id="detailPostContent">Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium consequuntur possimus quo placeat iure repellat, facilis voluptates voluptas ea, unde voluptate cupiditate earum labore pariatur ducimus! Numquam perferendis aut, labore, consequuntur minima illum inventore obcaecati similique laboriosam voluptate rem dicta beatae! Vel saepe dicta, qui est voluptas impedit iste modi, beatae asperiores aliquid numquam corrupti veritatis quo adipisci optio amet nisi quaerat ipsa tempora quasi cumque, culpa minus ex. Ipsum fugiat distinctio, impedit earum odit quidem saepe facilis. Magni deserunt mollitia, tenetur soluta aliquid assumenda, eveniet fugit minima iste reprehenderit optio sunt quo. Rerum, dolorem est veniam dolores soluta consequuntur vel deserunt dolor vitae repellendus mollitia ut sunt temporibus a quas quidem quos sapiente in corporis reiciendis commodi inventore doloremque. Temporibus explicabo repellat eaque error laborum quia architecto impedit quam quisquam nobis ducimus, ipsam corporis magni at libero optio ea maxime! Doloribus labore similique pariatur modi corporis ex est nihil. Vel, est animi. Veritatis nostrum quis error sed aliquam perspiciatis consequatur omnis voluptatibus excepturi voluptates architecto facere laborum, inventore incidunt iusto ullam temporibus iure exercitationem dignissimos ad dolor id sint sit. Recusandae repudiandae aperiam ipsa, explicabo in sint doloremque quia, quidem, fugit rem molestias error magnam et ea incidunt veniam?</p>
+        <div class="comment-container" id="commentContainer">
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Mollitia quibusdam exercitationem minus harum sunt accusantium pariatur eaque nulla tempore. Minima obcaecati et quidem dolorem repellat soluta dolor dolorum beatae qui eaque quos perspiciatis odit accusamus laudantium hic cupiditate, facilis quisquam. Excepturi odit in placeat perspiciatis nostrum exercitationem maxime nulla at?</p>
+        </div>
+
+    </div>
+</body>
+</html>
+
+<style>
+    body {
+    font-family: Arial, sans-serif;
+    background-color: #121212; /* Dark background color */
+    color: #FFFFFF; /* Text color */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.detail-container {
+    background-color: #1e1e1e; /* Dark post background */
+    border: 1px solid #ccc; /* Post border */
+    border-radius: 5px;
+    padding: 20px;
+    max-width: 600px;
+    text-align: left;
+}
+
+.detail-container h2 {
+    font-size: 1.5rem;
+    margin: 0 0 10px;
+}
+
+.detail-container img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+    margin: 10px 0;
+}
+
+.detail-container p {
+    font-size: 1.1rem;
+    line-height: 1.4;
+}
+
+.comment-container {
+    background-color: #1e1e1e; /* Dark comment container background */
+    border: 1px solid #ccc; /* Comment container border */
+    border-radius: 5px;
+    padding: 10px;
+    margin-top: 20px;
+}
+
+.comment-container p {
+    font-size: 1rem;
+    margin: 0 0 10px;
+}
+
+</style>
+
+{% endblock %}

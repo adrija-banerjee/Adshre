@@ -1,16 +1,198 @@
+
 {% extends 'base.html' %}
 {% load static %}
 
 {% block metatags %}
 <title>Profile : College Connect</title>
 
+<style>
+    body {
+    font-family: Arial, sans-serif;
+    background-color: #121212; /* Dark background color */
+    color: #FFFFFF; /* Text color */
+}
+
+.feed-container {
+    max-width: 800px;
+    max-height: 1000px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.feed-item {
+    background-color: #1e1e1e; /* Dark feed item background */
+    border: 1px solid #ccc; /* Feed item border */
+    border-radius: 5px;
+    margin-bottom: 20px;
+    padding: 20px;
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+}
+
+.user-img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.user-details h2 {
+    font-size: 1.2rem;
+    margin: 0;
+}
+
+.user-details p {
+    color: #888; /* Subtle user details color */
+    margin: 0;
+}
+
+.post-content {
+    margin-top: 10px;
+    font-size: 1.1rem;
+    line-height: 1.4;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 3; /* Limit text to 3 lines */
+    -webkit-box-orient: vertical;
+}
+
+.comment-button {
+    background-color: #0084FF; /* Button background color */
+    color: #FFFFFF;
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.comment-button:hover {
+    background-color: #0073CC; /* Button background color on hover */
+}
+
+.comment-input input[type="text"] {
+    width: 80%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #333333; /* Dark input field background */
+    color: #FFFFFF;
+}
+
+.comment-input button {
+    width: 18%;
+    padding: 10px;
+    background-color: #0084FF; /* Button background color */
+    border: none;
+    border-radius: 5px;
+    color: #FFFFFF;
+    cursor: pointer;
+}
+
+.comment-input button:hover {
+    background-color: #054a29; /* Button background color on hover */
+}
+
+.postImage {
+    width: 400px; /* Set the desired width */
+    height: 300px; /* Set the desired height */
+    
+}
+
+.submit-comment-button {
+    background-color: #0084FF; /* Button background color */
+    color: #FFFFFF;
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    cursor: pointer;
+    margin-right: 10px; /* Add margin-right to create space between buttons */
+   
+}
+
+
+.submit-comment-button:hover {
+    background-color: #1b4304; /* Button background color on hover */
+}
+
+/* CSS for the popup */
+.popup {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    overflow: auto;
+}
+
+.popup-content {
+    background-color: #1e1e1e;
+    margin: 10% auto;
+    padding: 20px;
+    max-width: 600px;
+    border-radius: 5px;
+    position: relative;
+    color: #FFFFFF;
+}
+
+.close {
+    color: #FFFFFF;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 24px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.popup h2 {
+    font-size: 1.5rem;
+    margin: 0;
+}
+
+.popup img {
+    max-width: 100%;
+    height: auto;
+    margin-top: 20px;
+    border-radius: 5px;
+}
+
+</style>
+
 {% endblock %}
 
 {% block content %}
 
-<div class="container">
-    
-    
-</div>
+    <body>
+    <div class="feed-container">
+        <div class="feed-item" onclick="redirectToDetailPage(this)">
+            <div class="user-info">
+                <img class="user-img" src="{% static 'img\gold.jpg' %}" alt="User 1">
+                <div class="user-details">
+                    <h2>User 1</h2>
+                    <p>Title 1</p>
+                </div>
+            </div> <br>
+            <img class="postImage" src="{% static 'img\gold.jpg' %}"  alt="User Image">
+            <p class="post-content">Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium consequuntur possimus quo placeat iure repellat, facilis voluptates voluptas ea, unde voluptate cupiditate earum labore pariatur ducimus! Numquam perferendis aut, labore, consequuntur minima illum inventore obcaecati similique laboriosam voluptate rem dicta beatae! Vel saepe dicta, qui est voluptas impedit iste modi, beatae asperiores aliquid numquam corrupti veritatis quo adipisci optio amet nisi quaerat ipsa tempora quasi cumque, culpa minus ex. Ipsum fugiat distinctio, impedit earum odit quidem saepe facilis. Magni deserunt mollitia, tenetur soluta aliquid assumenda, eveniet fugit minima iste reprehenderit optio sunt quo. Rerum, dolorem est veniam dolores soluta consequuntur vel deserunt dolor vitae repellendus mollitia ut sunt temporibus a quas quidem quos sapiente in corporis reiciendis commodi inventore doloremque. Temporibus explicabo repellat eaque error laborum quia architecto impedit quam quisquam nobis ducimus, ipsam corporis magni at libero optio ea maxime! Doloribus labore similique pariatur modi corporis ex est nihil. Vel, est animi. Veritatis nostrum quis error sed aliquam perspiciatis consequatur omnis voluptatibus excepturi voluptates architecto facere laborum, inventore incidunt iusto ullam temporibus iure exercitationem dignissimos ad dolor id sint sit. Recusandae repudiandae aperiam ipsa, explicabo in sint doloremque quia, quidem, fugit rem molestias error magnam et ea incidunt veniam?</p>
+            <div class="comment-input" >
+                <input type="text" placeholder="Add a comment...">
+            </div> <br>
+            <button class="submit-comment-button">Comment</button>
+        </div>
+        <!-- Add more feed items here-->
+    </div>
+</body>   
 
-{% endblock %}
+
+<script>
+    //function redirectToDetailPage(feedItem){
+    //window.location.href = "make_post.html";}
+</script>
+
+{% endblock %} 
