@@ -47,14 +47,15 @@ INSTALLED_APPS = [
     "post.apps.PostConfig",
     "account.apps.AccountConfig",
     "branch.apps.BranchConfig",
-    "club.apps.ClubConfig",
     "resource.apps.ResourceConfig",
     "announcement.apps.AnnouncementConfig",
+    # "search.apps.SearchConfig"
 
     # helper apps
     'taggit',
-
-    
+    'ckeditor',
+    'ckeditor_uploader',
+    'rangefilter',
 ]
 
 MIDDLEWARE = [
@@ -161,3 +162,33 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
+
+
+
+# SMTP setup
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_USE_TLS = config('EMAIL_USE_TLS')
+EMAIL_HOST = 'smtp.gmail.com'  
+EMAIL_PORT = config('EMAIL_PORT')
+EMAIL_HOST_USER = config('EMAIL_HOST_USER')
+EMAIL_HOST_PASSWORD = config('EMAIL_HOST_PASSWORD')
+
+CKEDITOR_UPLOAD_PATH= "ckeditor_upload/"
+CKEDITOR_JQUERY_URL = '//ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js'  # Specify jQuery URL if necessary
+CKEDITOR_CONFIGS = {
+    'default': {
+        'toolbar': [
+                    {'name': 'clipboard', 'items': ['Cut', 'Copy', 'Paste', 'PasteText', 'PasteFromWord', '-', 'Undo', 'Redo']},
+                    {'name': 'basicstyles', 'items': ['Bold', 'Italic', 'Underline', 'Strike', 'Subscript', 'Superscript', '-', 'RemoveFormat']},
+                    {'name': 'paragraph', 'items': ['NumberedList', 'BulletedList', '-', 'Outdent', 'Indent', '-', 'Blockquote']},
+                    {'name': 'links', 'items': ['Link', 'Unlink', 'Anchor']},
+                    {'name': 'insert', 'items': ['Image', 'Table', 'HorizontalRule', 'SpecialChar']},
+                    '/',
+                    {'name': 'styles', 'items': ['Styles', 'Format']},
+                    {'name': 'colors', 'items': ['TextColor', 'BGColor']},
+                ],
+        'height':600,
+        'width':1200,
+    },
+}
+# CKEDITOR_BASEPATH = "{% static 'ckeditor/' %}"

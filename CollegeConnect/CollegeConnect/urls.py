@@ -24,13 +24,15 @@ from django.conf.urls.static import static
 
 urlpatterns = [
     path("admin/", admin.site.urls),
+    path('ckeditor/', include('ckeditor_uploader.urls')),
     # User app urls
     path('', include('home.urls')),
     path('account/', include('account.urls')),
     path('post/', include('post.urls')),
     path('announcement/', include('announcement.urls')),
-    path('club/', include('club.urls')),
+    path('search', include('search.urls')),
     path('resource/', include('resource.urls')),
+    path('branch/', include('branch.urls')),
 
 ]
 

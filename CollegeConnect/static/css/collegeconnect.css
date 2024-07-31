@@ -50,7 +50,7 @@ body {
 }
 
 p {
-    font-size: x-small;
+    font-size: medium;
     align-items: justify;
 }
 
@@ -101,7 +101,6 @@ h1 {
 .text-offwhite {
     color:#ccc;
 }
-
 
 
 /* Navigation Styles */
@@ -307,6 +306,42 @@ input[type="email"]:focus {
     padding: 10px;
 }
 
+/* Post app css */
+
+.feed-link {
+    color: #f1f1f1;
+    text-decoration: none;
+}
+
+.feed-link:hover {
+    background-color: #3f4b6e;
+}
+
+.post-content {
+    align-items: justify;
+    margin:20px;
+    padding: 10px;
+}
+
+.comment-card{
+    background-color: #242424;
+    box-shadow: 0 0 16px hsl(0, 0%, 9%);
+    border-radius: 1px;
+    padding: 10px;
+    margin: 10px;
+}
+
+
+.card {
+    background-color: #202020; /* Dusky */
+    box-shadow: 0 0 16px hsl(0, 1%, 26%);
+    border-radius: 4px;
+    padding: 20px;
+    margin: 10px;
+    /* box-shadow: 0 2px 4px rgba(255, 255, 255, 0.808); */
+}
+
+
 /* Justify content */
 .justify-center {
     justify-content: center;
@@ -330,3 +365,5 @@ input[type="email"]:focus {
     background-color: #262630;
     color: #ccc;
 }
+
+
